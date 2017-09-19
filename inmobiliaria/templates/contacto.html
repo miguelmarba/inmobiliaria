@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contacto</title>
+</head>
+<body>
+<a href="{% url 'inmobiliaria:logout' %}" >Logout</a>
+<form method="POST" action="">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" id="" value="Confirmar">
+</form>
+</body>
+</html>

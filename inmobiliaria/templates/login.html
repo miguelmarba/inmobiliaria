@@ -1,0 +1,21 @@
+{% extends "layout_login.html" %}
+{% block content %}
+{% load static %}
+<img src="{% static 'img/user.png' %}">
+<form action="{% url 'inmobiliaria:login' %}" method="post">
+  {% csrf_token %}
+  <div class="form-input">
+    <input type="text" id="username" name="username" placeholder="&#128274; Usuario">
+  </div>
+  <div class="form-input">
+    <input type="password" id="password" name="password" placeholder="&#128272; Contraseña">
+  </div>
+  <input type="submit" name="submit" value="Entrar" class="btn-login"><br>
+  <a href="{% url 'inmobiliaria:password_reset' %}">¿Olvidaste tu contraseña?</a>
+</form>
+{% if error != "" %}
+<div class="msg">
+  <p>{{error}}</p>
+</div>
+{% endif %}
+{% endblock %}
